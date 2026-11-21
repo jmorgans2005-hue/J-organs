@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UBP.HYPER2 — Neon Dash</title>
+    <meta name="description" content="Play Neon Dash, an original browser game by Andrew with 700 generated levels." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="hud">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span>NEON DASH <small>by Andrew</small></span>
+        </div>
+        <div class="hud-right">
+          <div class="level-count">LEVEL <span id="levelNumber">1</span><span class="level-total">/700</span></div>
+          <div class="gem-count"><span class="gem-icon"></span><span id="gemCount">700</span></div>
+          <div class="attempt">ATTEMPT <span id="attempt">1</span></div>
+        </div>
+      </header>
+
+      <section class="game-frame" id="gameFrame">
+        <canvas id="game" aria-label="Neon Dash game"></canvas>
+
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="overlay visible" id="startOverlay">
+          <div class="overlay-card">
+            <p class="eyebrow">700 GENERATED LEVELS</p>
+            <h1>NEON DASH</h1>
+            <button class="play-button" id="playButton" type="button">
+              <span class="play-icon"></span>
+              PLAY
+            </button>
+            <p class="hint">An original game by Andrew</p>
+            <p class="hint">Click, tap, or press <kbd>Space</kbd> to jump</p>
+          </div>
+        </div>
+
+        <div class="overlay" id="deathOverlay">
+          <div class="overlay-card compact">
+            <p class="eyebrow">CRASHED</p>
+            <h2 id="deathPercent">0%</h2>
+            <button class="play-button retry" id="retryButton" type="button">
+              <span class="retry-icon"></span>
+              RETRY
+            </button>
+          </div>
+        </div>
+
+        <div class="overlay" id="winOverlay">
+          <div class="overlay-card">
+            <p class="eyebrow">LEVEL COMPLETE</p>
+            <h1>100%</h1>
+            <button class="play-button" id="nextLevelButton" type="button">
+              NEXT LEVEL
+            </button>
+            <button class="play-button secondary-button" id="againButton" type="button">
+              <span class="retry-icon"></span>
+              REPLAY
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="controls">
+        <span><kbd>SPACE</kbd> JUMP</span>
+        <span><kbd>R</kbd> RESTART</span>
+        <span class="sound-control" id="soundControl">SOUND <b id="soundState">ON</b></span>
+        <span class="theme-control" id="themeControl">MODE <b id="themeState">NEON</b></span>
+      </footer>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
